@@ -23,18 +23,33 @@
               <div class="menu-item">
                 <a href="#" class="menu-link">Contacts</a>
               </div>
+              <div class="menu-item">
+                <div class="basket-menu">
+                  <button class="basket-button mobile">
+                    <img src="/images/basket-mobile.svg" alt="basket-button" />
+                  </button>
+                </div>
+              </div>
             </ul>
           </div>
-          <div class="burger-menu">
-            <button class="burger-button">
-              <img src="/images/burger-button.png" alt="burger-button" />
+          <div class="label-menu">
+            <button class="label-button">
+              <img src="/images/label-button.png" alt="label-button" />
             </button>
-            <h3 class="burger-text">fresh harvest box</h3>
+            <h3 class="label-text">fresh harvest box</h3>
           </div>
           <div class="basket-menu">
             <button class="basket-button">
               <img src="/images/basket-button.png" alt="basket-button" />
             </button>
+          </div>
+          <div id="burger" class="burger-menu">
+            <img
+              src="./images/burger-open.png"
+              alt="menu"
+              class="burger-open"
+            />
+            <img src="/images/x.svg" alt="basket-button" class="burger-close" />
           </div>
         </div>
       </div>
@@ -47,7 +62,8 @@
               <div class="our-fruit">
                 <h4 class="our-expertly">
                   Our expertly curated fruit baskets are made with the freshest,
-                  highest quality fruits available. Whether you are looking for
+                  highest quality fruits available. Whether you are looking
+                  for<br />
                   a healthy snack or a gift for a loved one, Fresh Harvest Box
                   has got you covered.
                 </h4>
@@ -81,8 +97,47 @@
                   </button>
                 </div>
               </div>
-
               <div class="our-fruit">
+                <img
+                  src="/images/strawberries.svg"
+                  alt="strawberry"
+                  class="strawberry-basket"
+                />
+                <div class="tags-fruit">
+                  <div class="tags-item">
+                    <div class="tags-organic">
+                      <span>#organic</span>
+                    </div>
+                    <div class="tags-products">
+                      <span>#products</span>
+                    </div>
+                  </div>
+                  <div class="tags-item">
+                    <div class="tags-basket">
+                      <span>#basket</span>
+                    </div>
+                    <div class="tags-fruits">
+                      <span>#fruits</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="our-fruit-row">
+              <div class="our-fruit-invisible">
+                <h4 class="our-expertly">
+                  Our expertly curated fruit baskets are made with the freshest,
+                  highest quality fruits available. Whether you are looking for
+                  a healthy snack or a gift for a loved one, Fresh Harvest Box
+                  has got you covered.
+                </h4>
+                <img
+                  class="watermelon-basket"
+                  src="/images/watermelon.svg"
+                  alt="watermelon"
+                />
+              </div>
+              <div class="our-fruit-invisible">
                 <img
                   src="/images/strawberries.svg"
                   alt="strawberry"
@@ -149,7 +204,21 @@
               </h4>
             </div>
           </div>
-          <img class="fruits-present" src="/images/fruits.gif" alt="fruits" />
+          <img
+            class="fruits-present desktop"
+            src="/images/fruit.png"
+            alt="fruits"
+          />
+          <img
+            class="fruits-present tablet"
+            src="/images/fruits-tablet.png"
+            alt="fruits"
+          />
+          <img
+            class="fruits-present mobile"
+            src="/images/fruits-mobile.png"
+            alt="fruits"
+          />
         </div>
       </section>
       <section class="organic-fruits">
@@ -171,9 +240,23 @@
                 alt="strawberry"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">100 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">100 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item banana">
               <div class="fruits-title">Banana</div>
@@ -183,9 +266,23 @@
                 alt="banana"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">80 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">80 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item watermelon">
               <div class="fruits-title">Watermelon</div>
@@ -195,17 +292,45 @@
                 alt="Watermelon"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">40 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">40 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item lime">
               <div class="fruits-title">Lime</div>
               <div class="fruits-subtitle">Plant</div>
               <img src="/images/product4.png" alt="Lime" class="fruits-photo" />
-              <button class="fruits-price">
-                <div class="text-price">60 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">60 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item apple">
               <div class="fruits-title">Apple</div>
@@ -215,9 +340,23 @@
                 alt="Apple"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">50 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">50 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item peach">
               <div class="fruits-title">Peach</div>
@@ -227,9 +366,23 @@
                 alt="Peach"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">80 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">80 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item plums">
               <div class="fruits-title">Plums</div>
@@ -239,9 +392,23 @@
                 alt="Plums"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">40 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">40 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item orange">
               <div class="fruits-title">Orange</div>
@@ -251,17 +418,45 @@
                 alt="Orange"
                 class="fruits-photo"
               />
-              <button class="fruits-price">
-                <div class="text-price">60 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">60 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
             <div class="fruits-item kiwi">
               <div class="fruits-title">Kiwi</div>
               <div class="fruits-subtitle">Plant</div>
               <img src="/images/product9.png" alt="Kiwi" class="fruits-photo" />
-              <button class="fruits-price">
-                <div class="text-price">90 UAH / kg</div>
-              </button>
+              <div class="fruits-add">
+                <div class="fruits-price">
+                  <div class="text-price">90 UAH / kg</div>
+                </div>
+                <div class="count">
+                  <button class="down">
+                    <span>-</span>
+                  </button>
+                  <span class="value">1</span>
+                  <button class="up">
+                    <span>+</span>
+                  </button>
+                </div>
+                <div class="add-order">
+                  <img src="./images/basket-button.png" alt="order" />
+                </div>
+              </div>
             </div>
           </div>
           <div class="order-button">
@@ -275,6 +470,11 @@
           <h2 class="to-order-title">Fresh Harvest Box has got you covered</h2>
           <div class="to-order-fruits">
             <img src="./images/melon.png" alt="melon" class="fruit-melon" />
+            <img
+              src="./images/melon-tablet.png"
+              alt="melon"
+              class="fruit-melon"
+            />
             <img
               src="./images/blueberry.png"
               alt="blueberry"
@@ -307,11 +507,11 @@
           <div class="contacts-row">
             <div class="contacts-item">
               <img src="./images/footer-photo.png" alt="photo" />
-              <div class="footer-burger-menu">
-                <button class="burger-button">
-                  <img src="/images/burger-button.png" alt="burger-button" />
+              <div class="footer-label-menu">
+                <button class="label-button">
+                  <img src="/images/label-button.png" alt="label-button" />
                 </button>
-                <h3 class="burger-text">fresh harvest box</h3>
+                <h3 class="label-text">fresh harvest box</h3>
               </div>
             </div>
             <div class="contacts-item">
@@ -343,8 +543,28 @@
               </div>
             </div>
           </div>
+          <div class="contacts-item">
+            <div class="nav-menu-tablet">
+              <ul class="menu-list">
+                <div class="menu-item">
+                  <a href="#" class="menu-link">How It Works</a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">Fruits</a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">Contacts</a>
+                </div>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </footer>
+    <div class="popap-basket">
+      <div class="popap-body">
+        <div class="popap-content"></div>
+      </div>
+    </div>
   </body>
 </html>

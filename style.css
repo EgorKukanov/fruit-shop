@@ -40,6 +40,9 @@ body {
   font-family: "DM Sans", sans-serif;
   color: #fff;
 }
+.lock {
+  overflow: hidden;
+}
 
 /* ============================= header ================================== */
 header {
@@ -51,10 +54,21 @@ main {
 footer {
   background-color: #f0f0f0;
 }
+a {
+  display: block;
+  transition: linear 0.2s;
+}
+a:hover {
+  color: gray;
+  transition: linear 0.2;
+  transform: scale(1.05);
+}
+
 .container {
   max-width: 1280px;
   padding: 0 32px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 .header-menu {
   display: flex;
@@ -62,7 +76,22 @@ footer {
   align-items: center;
   height: 50px;
 }
-.nav-menu {
+.header-menu.open .nav-menu {
+  visibility: visible;
+  top: 50px;
+  transition: linear 0.3s;
+}
+.burger-close {
+  display: none;
+}
+.header-menu.open .burger-open {
+  display: none;
+}
+.header-menu.open .burger-close {
+  display: block;
+}
+.nav-menu-tablet {
+  display: none;
 }
 .menu-list {
   display: flex;
@@ -80,14 +109,13 @@ footer {
   line-height: 18px;
   letter-spacing: -0.56px;
 }
-.burger-menu {
+.label-menu {
   display: flex;
   margin-left: -160px;
 }
-.burger-button {
-  cursor: pointer;
+.label-button {
 }
-.burger-text {
+.label-text {
   margin-left: 8px;
   color: #ae1332;
   text-align: center;
@@ -99,10 +127,17 @@ footer {
 }
 .basket-menu {
 }
+.burger-menu {
+  display: none;
+}
 .basket-button {
   cursor: pointer;
+  transition: linear 0.2s;
 }
-
+.basket-button:hover {
+  transform: scale(1.1);
+  transition: linear 0.2s;
+}
 /* ============================ main =============================== */
 
 .shop-photo {
@@ -142,6 +177,10 @@ footer {
   flex-direction: column;
   max-width: 249px;
 }
+.our-fruit-invisible {
+  display: none;
+}
+
 .our-expertly {
   margin-top: 296px;
   width: 222px;
@@ -246,7 +285,7 @@ footer {
   position: absolute;
   bottom: 0px;
   border-radius: 114px;
-  bottom: 82px;
+  bottom: 100px;
   left: 164px;
   cursor: pointer;
 }
@@ -357,11 +396,13 @@ footer {
   display: block;
   margin: 0 auto;
   margin-top: 81px;
-  width: 860px;
-  height: 476px;
-  border-radius: 20px;
 }
-
+.tablet {
+  display: none;
+}
+.mobile {
+  display: none;
+}
 .organic-title {
   width: 624px;
   color: #fff;
@@ -396,6 +437,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 24px;
 }
 .fruits-item {
   display: flex;
@@ -404,7 +446,6 @@ footer {
   height: 465px;
   border-radius: 20px;
   background: #f8766b;
-  margin-bottom: 24px;
 }
 .banana {
   background: #edd251;
@@ -466,8 +507,83 @@ footer {
   background: #fff;
   margin-left: 24px;
   margin-top: 5px;
-  cursor: pointer;
 }
+.fruits-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+.down {
+  border-radius: 5px;
+  background: #fff;
+  display: block;
+  transition: linear 0.3s;
+}
+.down:hover {
+  background: #fcced6;
+  transition: linear 0.3s;
+}
+.up {
+  border-radius: 5px;
+  background: #fff;
+  display: block;
+  transition: linear 0.3s;
+}
+.up:hover {
+  background: #fcced6;
+  transition: linear 0.3s;
+}
+.down > span {
+  display: block;
+  background-color: #fff;
+  color: #ae1332;
+  width: 23px;
+  border-radius: 100%;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  font-size: 20px;
+  transition: linear 0.3s;
+}
+.down > span:hover {
+  background: #fcced6;
+  transition: linear 0.3s;
+}
+.value {
+  display: block;
+  width: 25px;
+  text-align: center;
+  background-color: #fff;
+  color: #ae1332;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 10px;
+  line-height: 24px;
+  border-radius: 100%;
+  letter-spacing: -0.72px;
+  font-family: "DM Sans", sans-serif;
+}
+.up > span {
+  display: block;
+  background-color: #fff;
+  color: #ae1332;
+  width: 23px;
+  font-size: 20px;
+  border-radius: 100%;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+.up > span:hover {
+  background: #fcced6;
+  transition: linear 0.3s;
+}
+
 .text-price {
   color: #ae1332;
   font-size: 18px;
@@ -475,6 +591,20 @@ footer {
   line-height: 24px;
   letter-spacing: -0.72px;
   font-family: "DM Sans", sans-serif;
+  cursor: default;
+}
+.add-order {
+  margin-right: 20px;
+  border-radius: 100%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #ae1332;
+  transition: linear 0.3s;
+  padding: 0 2px;
+}
+.add-order:hover {
+  background: #fcced6;
+  transition: linear 0.3s;
 }
 .order-button {
   width: 114px;
@@ -531,6 +661,9 @@ footer {
   width: 792px;
   height: 502px;
   border-radius: 20px;
+}
+.fruit-melon:nth-child(n + 2) {
+  display: none;
 }
 .fruit-blueberry {
   width: 400px;
@@ -608,7 +741,7 @@ footer {
   align-items: center;
   padding: 80px 0;
 }
-.footer-burger-menu {
+.footer-label-menu {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -650,4 +783,257 @@ footer {
 }
 .contacts-index {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1278px) {
+  .fruits-row {
+    justify-content: center;
+    gap: 24px;
+  }
+  .fruits-item {
+    margin-bottom: 0;
+  }
+  .kiwi {
+    display: none;
+  }
+  .cards-row {
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .to-order-fruits {
+    justify-content: center;
+    gap: 24px;
+  }
+  .fruit-melon {
+    width: 344px;
+    height: 480px;
+  }
+  .fruit-melon:nth-child(n + 2) {
+    display: block;
+  }
+  .fruit-melon:first-child {
+    display: none;
+  }
+  .fruit-blueberry {
+    width: 344px;
+    height: 480px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .our-fruit-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .our-fruit {
+    display: none;
+  }
+  .our-fruit-invisible {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 249px;
+  }
+  .photo-row {
+    justify-content: center;
+  }
+  .go-shopping {
+    bottom: -48px;
+  }
+  .our-expertly {
+    margin-top: 118px;
+  }
+  .strawberry-basket {
+    margin-top: 118px;
+  }
+  .title {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 54px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    width: 762px;
+    left: -154px;
+  }
+
+  .strawberry-photo {
+    position: absolute;
+    top: -80px;
+    width: 100px;
+    right: -123px;
+  }
+  .banana-photo {
+    position: absolute;
+    top: 37px;
+    width: 150px;
+    left: -146px;
+  }
+  .to-order-title {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 54px;
+    letter-spacing: -2.16px;
+    text-transform: uppercase;
+    width: 700px;
+  }
+  .desktop {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+}
+@media screen and (max-width: 900px) {
+  .fruits-row {
+    gap: 16px;
+  }
+  .fruits-item {
+    width: 344px;
+  }
+  .to-order-fruits {
+    gap: 16px;
+  }
+  .nav-menu:last-child {
+    display: none;
+  }
+  .nav-menu-tablet {
+    display: block;
+    padding-bottom: 80px;
+    margin-left: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    position: absolute;
+    background: #ae1332;
+    z-index: 2;
+    top: -100%;
+    left: 0;
+    height: 100vh;
+    padding-top: 123px;
+    width: 100%;
+    transition: linear 0.3s;
+  }
+  .label-menu {
+    margin-left: 0;
+  }
+  .menu-list {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    align-items: center;
+  }
+  .burger-menu {
+    z-index: 100;
+    cursor: pointer;
+  }
+  .menu-item {
+    margin: 0;
+  }
+  .menu-link {
+    color: #fff;
+  }
+  .basket-button {
+    display: none;
+    background-color: #ae1332;
+  }
+  .burger-menu {
+    display: block;
+  }
+  .shop-photo {
+    padding-bottom: 80px;
+  }
+  .strawberry-photo {
+    position: absolute;
+    top: -59px;
+    width: 70px;
+    right: -23px;
+  }
+  .banana-photo {
+    position: absolute;
+    top: -15px;
+    width: 88px;
+    left: -23px;
+  }
+  .go-shopping {
+    left: 93px;
+  }
+  .title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -1.12px;
+    text-transform: uppercase;
+    width: 320px;
+    left: -23px;
+  }
+  .subtitle {
+    width: 320px;
+  }
+  .organic-title {
+    font-size: 28px;
+    width: 220px;
+  }
+  .organic-subtitle {
+    width: 320px;
+  }
+  .to-order-title {
+    font-size: 32px;
+    width: 310px;
+    line-height: 100%;
+  }
+  .to-order-describe {
+    width: 320px;
+  }
+  .our-fruit-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .our-fruit-invisible:last-child {
+    flex-direction: column-reverse;
+  }
+  .woman-photo > img {
+    width: 290px;
+  }
+  .tags-basket {
+    width: 125px;
+  }
+  .tags-fruits {
+    width: 125px;
+  }
+  .strawberry-basket {
+    margin-top: 44px;
+  }
+  .easy-steps-title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -1.12px;
+    text-transform: uppercase;
+    width: 335px;
+  }
+  .plums {
+    display: none;
+  }
+  .orange {
+    display: none;
+  }
+  .fruit-blueberry {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
