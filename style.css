@@ -134,6 +134,9 @@ a:hover {
   cursor: pointer;
   transition: linear 0.2s;
 }
+.basket-button-mobile {
+  display: none;
+}
 .basket-button:hover {
   transform: scale(1.1);
   transition: linear 0.2s;
@@ -297,12 +300,17 @@ a:hover {
   width: 114px;
   height: 114px;
   background-color: #fff;
+  color: #ae1332;
   border-radius: 114px;
+  transition: linear 0.2s;
+}
+.shopping-button:hover {
+  color: #a4cb66;
+  transition: linear 0.2s;
 }
 
 .shopping-text {
   transform: rotate(-14deg);
-  color: #ae1332;
   text-align: center;
   text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
   font-size: 28px;
@@ -401,6 +409,9 @@ a:hover {
   display: none;
 }
 .mobile {
+  display: none;
+}
+.basket-menu-mobile {
   display: none;
 }
 .organic-title {
@@ -523,21 +534,21 @@ a:hover {
   border-radius: 5px;
   background: #fff;
   display: block;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .down:hover {
   background: #fcced6;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .up {
   border-radius: 5px;
   background: #fff;
   display: block;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .up:hover {
   background: #fcced6;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .down > span {
   display: block;
@@ -548,11 +559,11 @@ a:hover {
   font-family: "DM Sans", sans-serif;
   cursor: pointer;
   font-size: 20px;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .down > span:hover {
   background: #fcced6;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .value {
   display: block;
@@ -577,11 +588,11 @@ a:hover {
   border-radius: 100%;
   font-family: "DM Sans", sans-serif;
   cursor: pointer;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .up > span:hover {
   background: #fcced6;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 
 .text-price {
@@ -599,31 +610,39 @@ a:hover {
   background: #fff;
   cursor: pointer;
   border: 2px solid #ae1332;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
   padding: 0 2px;
 }
 .add-order:hover {
   background: #fcced6;
-  transition: linear 0.3s;
+  transition: linear 0.2s;
 }
 .order-button {
   width: 114px;
   height: 114px;
   border-radius: 114px;
+  color: #fff;
   background: #9dc262;
   position: relative;
   margin: 0 auto;
   cursor: pointer;
   margin-top: 20px;
+  transition: linear 0.2s;
+}
+.order-button:hover {
+  background-color: #fff;
+  color: #9dc262;
+  transition: linear 0.2s;
 }
 .order-arrow {
   position: absolute;
-  bottom: 37px;
-  left: 16px;
+  font-size: 20px;
+  bottom: 35px;
+  transform: rotate(45deg);
+  left: 14px;
 }
 .order-text {
   transform: rotate(-14deg);
-  color: #fff;
   text-align: center;
   text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
   font-size: 18px;
@@ -640,7 +659,6 @@ a:hover {
   position: relative;
   z-index: 2;
   width: 785px;
-  color: #fff;
   text-align: center;
   text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
   font-size: 64px;
@@ -727,11 +745,12 @@ a:hover {
   transition: background 0.2s linear;
 }
 .subscribe-button:hover {
-  background-color: #a5d35c;
+  color: #9dc162;
+  background-color: #fff;
   transition: background 0.2s linear;
 }
 .subscribe-button:active {
-  background-color: #a1d947;
+  background-color: #fff;
   opacity: 0.7;
   transition: background linear 0.2s;
 }
@@ -749,12 +768,19 @@ a:hover {
 
 .contacts-item {
 }
+
 .social-item {
   display: flex;
   gap: 20px;
 }
 .social-item > img {
   cursor: pointer;
+  transition: linear 0.2s;
+  border-radius: 10px;
+}
+.social-item > img:hover {
+  background-color: #fcced6;
+  transition: linear 0.2s;
 }
 .contacts-phone {
   color: #ae1332;
@@ -763,7 +789,14 @@ a:hover {
   text-transform: uppercase;
   margin-top: 40px;
   cursor: pointer;
+  transition: linear 0.2s;
 }
+.contacts-phone:hover {
+  color: grey;
+  transition: linear 0.2s;
+  transform: scale(1.05);
+}
+
 .contacts-address {
   display: flex;
   width: 180px;
@@ -774,6 +807,12 @@ a:hover {
   letter-spacing: -0.36px;
   margin-top: 20px;
   cursor: pointer;
+  transition: linear 0.2s;
+}
+.contacts-address:hover {
+  color: grey;
+  transition: linear 0.2s;
+  transform: scale(1.05);
 }
 .contacts-street {
   cursor: pointer;
@@ -785,6 +824,279 @@ a:hover {
   cursor: pointer;
 }
 
+.popap-basket {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: linear 1s;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+  transition: linear 1s;
+}
+.popap-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popap-content {
+  padding-left: 40px;
+  position: relative;
+  border-radius: 20px;
+  color: #000;
+  max-width: 900px;
+  background-color: #fafafa;
+}
+.popap-title {
+  color: #ae1332;
+  text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44px;
+  padding: 40px 0;
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+}
+.popap-close {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  transition: linear 0.2s;
+}
+.popap-close:hover {
+  transform: scale(1.2);
+  transition: linear 0.2s;
+}
+.popap-baskets {
+  display: flex;
+  gap: 12px;
+}
+.popap-strawberry {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  background-color: #f8766b;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 40px;
+  transition: linear 0.2s;
+}
+.popap-strawberry:hover {
+  transform: scale(1.02);
+  transition: linear 0.2s;
+}
+.popap-apple {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  background-color: #edd251;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 40px;
+  transition: linear 0.2s;
+}
+.popap-apple:hover {
+  transform: scale(1.02);
+  transition: linear 0.2s;
+}
+.popap-fruits {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  background-color: #9dc262;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 40px;
+  transition: linear 0.2s;
+}
+.popap-fruits:hover {
+  transform: scale(1.02);
+  transition: linear 0.2s;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.basket-title {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+.basket-subtitle {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.image-basket {
+  max-width: 186px;
+  position: absolute;
+  left: 10px;
+  display: block;
+}
+.popap-strawberry > .image-basket {
+  position: absolute;
+  left: 40px;
+}
+.form {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+.popap-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 360px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #000;
+  opacity: 0.5;
+  padding: 0 24px;
+  font-size: 16px;
+  transition: linear 0.2s;
+}
+input:hover {
+  transform: scale(1.02);
+  transition: linear 0.2s;
+}
+
+textarea {
+  width: 360px;
+  height: 145px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  opacity: 0.5;
+  padding: 0 24px;
+  font-size: 16px;
+  padding-top: 15px;
+  transition: linear 0.2s;
+}
+textarea:hover {
+  transform: scale(1.02);
+  transition: linear 0.2s;
+}
+.submit-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  justify-content: center;
+  border-radius: 100px;
+  background: #9dc162;
+  width: 144px;
+  height: 48px;
+  color: #fff;
+  cursor: pointer;
+  transition: linear 0.2s;
+}
+.submit-button:hover {
+  background-color: #89c031;
+  transform: scale(1.05);
+}
+.form-image {
+  display: block;
+}
+.popap-purchase {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: linear 1s;
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: linear 1s;
+}
+.purchase-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.purchase-content {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 600px;
+  height: 545px;
+  position: relative;
+  border-radius: 20px;
+  color: #000;
+  background: #e03f5e;
+}
+.purchase-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: linear 0.2s;
+}
+.purchase-close:hover {
+  transform: scale(1.2);
+  transition: linear 0.2s;
+}
+.raspberries {
+  margin-top: 68px;
+}
+.purchase-title {
+  color: #fff;
+  text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+  margin-top: 28px;
+}
+.purchase-subtitle {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 14px;
+  width: 381px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  margin-top: 14px;
+}
 @media screen and (max-width: 1278px) {
   .fruits-row {
     justify-content: center;
@@ -842,6 +1154,10 @@ a:hover {
   }
   .our-expertly {
     margin-top: 118px;
+    text-align: center;
+  }
+  .our-fruit-invisible {
+    align-items: center;
   }
   .strawberry-basket {
     margin-top: 118px;
@@ -886,6 +1202,10 @@ a:hover {
   .tablet {
     display: block;
   }
+  .popap-content {
+    overflow: hidden;
+    max-width: 704px;
+  }
 }
 @media screen and (max-width: 900px) {
   .fruits-row {
@@ -921,6 +1241,7 @@ a:hover {
   .label-menu {
     margin-left: 0;
   }
+
   .menu-list {
     display: flex;
     color: #fff;
@@ -1021,6 +1342,13 @@ a:hover {
     text-transform: uppercase;
     width: 335px;
   }
+  .contacts-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .nav-menu-tablet {
+    display: none;
+  }
   .plums {
     display: none;
   }
@@ -1035,5 +1363,167 @@ a:hover {
   }
   .mobile {
     display: block;
+  }
+  .basket-button-mobile {
+    display: block;
+  }
+  .basket-menu-mobile {
+    display: block;
+  }
+  .basket-button-mobile {
+    background-color: #ae1332;
+    cursor: pointer;
+  }
+  .popap-baskets {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: column;
+  }
+  .popap-content {
+    padding-left: 0;
+    width: 345px;
+    height: 870px;
+  }
+  .popap-title {
+    color: #ae1332;
+    text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+    font-family: DM Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -1.12px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+  .popap-strawberry {
+    width: 295px;
+    height: 119px;
+  }
+  .popap-apple {
+    width: 295px;
+    height: 119px;
+  }
+  .popap-fruits {
+    width: 295px;
+    height: 119px;
+  }
+  .popap-strawberry > .image-basket {
+    position: absolute;
+    left: 176px;
+    width: 88px;
+    top: 12px;
+    height: 95px;
+  }
+  .image-basket {
+    position: absolute;
+    left: 152px;
+    display: block;
+    top: 12px;
+    width: 106px;
+    height: 95px;
+  }
+  .form-image {
+    display: none;
+  }
+  .form {
+    justify-content: center;
+    margin-top: 20px;
+    height: 385px;
+  }
+  input[type="text"],
+  input[type="email"] {
+    width: 295px;
+  }
+  textarea {
+    width: 295px;
+  }
+  .purchase-content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 335px;
+    height: 426px;
+    position: relative;
+    border-radius: 20px;
+    color: #000;
+    background: #e03f5e;
+  }
+  .raspberries {
+    width: 190px;
+    margin-top: 40px;
+  }
+  .purchase-title {
+    font-size: 28px;
+  }
+  .purchase-subtitle {
+    width: 295px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .container {
+    padding: 0 10px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .easy-steps-title {
+    font-size: 18px;
+    width: 258px;
+  }
+  .subtitle {
+    width: 290px;
+  }
+  .cards-item {
+    width: 300px;
+    gap: 10px;
+  }
+  .item-decribe {
+    margin-right: 10px;
+  }
+  .fruits-present {
+    max-width: 300px;
+  }
+  .organic-title {
+    padding-top: 50px;
+    font-size: 18px;
+  }
+  .organic-subtitle {
+    margin-bottom: 50px;
+    width: 300px;
+  }
+  .fruits-item {
+    width: 300px;
+  }
+  .fruits-add {
+    gap: 10px;
+  }
+  .fruits-price {
+    margin-left: 10px;
+  }
+  .fruit-melon {
+    width: 300px;
+    height: auto;
+  }
+  .contacts-item > img {
+    display: block;
+    width: 300px;
+  }
+  .popap-content {
+    width: 320px;
+  }
+  .popap-close {
+    right: 10px;
+  }
+  .popap-title {
+    padding-left: 10px;
+  }
+  .purchase-content {
+    width: 320px;
   }
 }

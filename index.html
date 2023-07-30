@@ -25,7 +25,7 @@
               </div>
               <div class="menu-item">
                 <div class="basket-menu">
-                  <button class="basket-button mobile">
+                  <button class="basket-button-mobile">
                     <img src="/images/basket-mobile.svg" alt="basket-button" />
                   </button>
                 </div>
@@ -43,7 +43,7 @@
               <img src="/images/basket-button.png" alt="basket-button" />
             </button>
           </div>
-          <div id="burger" class="burger-menu">
+          <div class="burger-menu">
             <img
               src="./images/burger-open.png"
               alt="menu"
@@ -245,11 +245,11 @@
                   <div class="text-price">100 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-strawberry">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-strawberry">1</span>
+                  <button class="up" id="up-strawberry">
                     <span>+</span>
                   </button>
                 </div>
@@ -271,11 +271,11 @@
                   <div class="text-price">80 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-banana">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-banana">1</span>
+                  <button class="up" id="up-banana">
                     <span>+</span>
                   </button>
                 </div>
@@ -297,11 +297,11 @@
                   <div class="text-price">40 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-watermelon">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-watermelon">1</span>
+                  <button class="up" id="up-watermelon">
                     <span>+</span>
                   </button>
                 </div>
@@ -319,11 +319,11 @@
                   <div class="text-price">60 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-lime">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-lime">1</span>
+                  <button class="up" id="up-lime">
                     <span>+</span>
                   </button>
                 </div>
@@ -345,11 +345,11 @@
                   <div class="text-price">50 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-apple">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-apple">1</span>
+                  <button class="up" id="up-apple">
                     <span>+</span>
                   </button>
                 </div>
@@ -371,11 +371,11 @@
                   <div class="text-price">80 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-peach">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-peach">1</span>
+                  <button class="up" id="up-peach">
                     <span>+</span>
                   </button>
                 </div>
@@ -397,11 +397,11 @@
                   <div class="text-price">40 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-plums">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-plums">1</span>
+                  <button class="up" id="up-plums">
                     <span>+</span>
                   </button>
                 </div>
@@ -423,11 +423,11 @@
                   <div class="text-price">60 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-orange">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-orange">1</span>
+                  <button class="up" id="up-orange">
                     <span>+</span>
                   </button>
                 </div>
@@ -445,11 +445,11 @@
                   <div class="text-price">90 UAH / kg</div>
                 </div>
                 <div class="count">
-                  <button class="down">
+                  <button class="down" id="down-kiwi">
                     <span>-</span>
                   </button>
-                  <span class="value">1</span>
-                  <button class="up">
+                  <span class="value" id="value-kiwi">1</span>
+                  <button class="up" id="up-kiwi">
                     <span>+</span>
                   </button>
                 </div>
@@ -460,7 +460,7 @@
             </div>
           </div>
           <div class="order-button">
-            <img src="./images/arrow.svg" alt="arrow" class="order-arrow" />
+            <span class="order-arrow">&#10132;</span>
             <h4 class="order-text">Order</h4>
           </div>
         </div>
@@ -492,7 +492,6 @@
           <form action="#" class="to-order-subscribe" method="post">
             <input
               class="subscribe-input"
-              type="email"
               name="name"
               placeholder="Enter email..."
             />
@@ -563,7 +562,95 @@
     </footer>
     <div class="popap-basket">
       <div class="popap-body">
-        <div class="popap-content"></div>
+        <div class="popap-content">
+          <h3 class="popap-title">YOUR ORDER</h3>
+          <img src="./images/x.svg" alt="x" class="popap-close" />
+          <form class="popap-baskets">
+            <div class="popap-strawberry">
+              <input type="checkbox" name="image" value="image1" />
+              <h4 class="basket-title">Strawberry Basket</h4>
+              <h5 class="basket-subtitle">Plant</h5>
+              <img
+                src="./images/strawberry-basket.png"
+                alt="strawberry"
+                class="image-basket"
+              />
+            </div>
+            <div class="popap-apple">
+              <input type="checkbox" name="image" value="image2" />
+              <h4 class="basket-title">Apple Basket</h4>
+              <h5 class="basket-subtitle">Plant</h5>
+              <img
+                src="./images/apple-basket.png"
+                alt="strawberry"
+                class="image-basket"
+              />
+            </div>
+            <div class="popap-fruits">
+              <input type="checkbox" name="image" value="image3" />
+              <h4 class="basket-title">Fruits Basket</h4>
+              <h5 class="basket-subtitle">Plant</h5>
+              <img
+                src="./images/fruit-basket.png"
+                alt="strawberry"
+                class="image-basket"
+              />
+            </div>
+          </form>
+          <div class="form">
+            <form class="popap-form">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter full name..."
+              /><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email..."
+              /><br />
+              <input
+                type="text"
+                id="card"
+                name="card"
+                placeholder="Enter card.."
+              /><br />
+              <textarea
+                id="comments"
+                name="comments"
+                placeholder="Enter comments..."
+              ></textarea
+              ><br />
+              <div class="submit-button">Submit</div>
+            </form>
+            <img
+              src="./images/woman-img.png"
+              alt="woman-img"
+              class="form-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popap-purchase">
+      <div class="purchase-body">
+        <div class="purchase-content">
+          <img src="./images/x-white.svg" alt="x" class="purchase-close" />
+          <img
+            src="./images/raspberries.png"
+            alt="raspberries"
+            class="raspberries"
+          />
+          <div class="purchase-title">THANK YOU</div>
+          <div class="purchase-subtitle">
+            Thank you for your order! Our team is preparing your box with fresh,
+            delicious fruits and vegetables, and we'll deliver it straight to
+            your doorstep. We appreciate your business and look forward to
+            providing you with the best possible experience!
+          </div>
+        </div>
       </div>
     </div>
   </body>
