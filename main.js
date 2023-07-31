@@ -14,39 +14,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const upStrawberry = document.querySelector("#up-strawberry");
     const downStrawberry = document.querySelector("#down-strawberry")
-    const valueStrawberry = document.querySelector("#value-strawberry")
+    let valueStrawberry = document.querySelector("#value-strawberry")
 
     const upBanana = document.querySelector("#up-banana");
     const downBanana = document.querySelector("#down-banana")
-    const valueBanana = document.querySelector("#value-banana")
+    let valueBanana = document.querySelector("#value-banana")
 
     const upWatermelon = document.querySelector("#up-watermelon");
     const downWatermelon = document.querySelector("#down-watermelon")
-    const valueWatermelon = document.querySelector("#value-watermelon")
+    let valueWatermelon = document.querySelector("#value-watermelon")
 
     const upLime = document.querySelector("#up-lime");
     const downLime = document.querySelector("#down-lime")
-    const valueLime = document.querySelector("#value-lime")
+    let valueLime = document.querySelector("#value-lime")
 
     const upApple = document.querySelector("#up-apple");
     const downApple = document.querySelector("#down-apple")
-    const valueApple = document.querySelector("#value-apple")
+    let valueApple = document.querySelector("#value-apple")
 
     const upPeach = document.querySelector("#up-peach");
     const downPeach = document.querySelector("#down-peach")
-    const valuePeach = document.querySelector("#value-peach")
+    let valuePeach = document.querySelector("#value-peach")
 
     const upPlums = document.querySelector("#up-plums");
     const downPlums = document.querySelector("#down-plums")
-    const valuePlums = document.querySelector("#value-plums")
+    let valuePlums = document.querySelector("#value-plums")
 
     const upOrange = document.querySelector("#up-orange");
     const downOrange = document.querySelector("#down-orange")
-    const valueOrange = document.querySelector("#value-orange")
+    let valueOrange = document.querySelector("#value-orange")
 
     const upKiwi = document.querySelector("#up-kiwi");
     const downKiwi = document.querySelector("#down-kiwi")
-    const valueKiwi = document.querySelector("#value-kiwi")
+    let valueKiwi = document.querySelector("#value-kiwi")
 
 
     upStrawberry.addEventListener("click", () => {
@@ -178,10 +178,35 @@ document.addEventListener("DOMContentLoaded", () => {
         popapPurchase.classList.remove("visible");
         body.classList.remove("lock")
     })
+
     // add order
 
-    const addOrder = document.querySelector(".add-order");
-    addOrder.addEventListener("click", () => {
-
-    })
+    let basketValue = document.querySelector(".basket-value");
+    const addOrder = document.querySelectorAll(".add-order");
+    addOrder.forEach(element => {
+        element.addEventListener('click', event => {
+            let value;
+            if (event.target.id === "add-strawberry") {
+                value = parseInt(valueStrawberry.textContent);
+            } else if (event.target.id === "add-banana") {
+                value = parseInt(valueBanana.textContent);
+            } else if (event.target.id === "add-watermelon") {
+                value = parseInt(valueWatermelon.textContent);
+            } else if (event.target.id === "add-lime") {
+                value = parseInt(valueLime.textContent);
+            } else if (event.target.id === "add-apple") {
+                value = parseInt(valueApple.textContent);
+            } else if (event.target.id === "add-peach") {
+                value = parseInt(valuePeach.textContent);
+            } else if (event.target.id === "add-plums") {
+                value = parseInt(valuePlums.textContent);
+            } else if (event.target.id === "add-orange") {
+                value = parseInt(valueOrange.textContent);
+            } else if (event.target.id === "add-kiwi") {
+                value = parseInt(valueKiwi.textContent);
+            }
+            const basketNumber = parseInt(basketValue.textContent);
+            basketValue.textContent = basketNumber + value;
+        });
+    });
 })

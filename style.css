@@ -141,6 +141,13 @@ a:hover {
   transform: scale(1.1);
   transition: linear 0.2s;
 }
+.basket-value {
+  display: inline-block;
+  width: 17px;
+  border-radius: 100%;
+  color: #f0f0f0;
+  background-color: #ae1332;
+}
 /* ============================ main =============================== */
 
 .shop-photo {
