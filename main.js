@@ -309,6 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         basketValue.textContent = totalQuantity;
+        basketValueMobile.textContent = totalQuantity;
 
         const emptyBasketMessage = document.querySelector(".empty-basket-message")
         if (totalSum < 1) {
