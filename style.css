@@ -1331,7 +1331,12 @@ textarea:hover {
   .label-menu {
     margin-left: 0;
   }
-
+  .popap-form {
+    align-items: center;
+  }
+  .empty-basket-message {
+    max-width: 300px;
+  }
   .menu-list {
     display: flex;
     color: #fff;
