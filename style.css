@@ -1292,7 +1292,9 @@ textarea:hover {
   }
   .popap-content {
     overflow: hidden;
+    overflow-y: scroll;
     max-width: 704px;
+    max-height: 1000px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -1553,6 +1555,8 @@ textarea:hover {
   }
   .order-count {
     justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
