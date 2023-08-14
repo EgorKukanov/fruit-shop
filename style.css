@@ -119,6 +119,7 @@ a:hover {
   align-items: center;
   height: 50px;
 }
+
 .header-menu.open .nav-menu {
   visibility: visible;
   top: 50px;

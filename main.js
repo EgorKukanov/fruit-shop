@@ -22,141 +22,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // add count fruits
 
-    const upStrawberry = document.querySelector("#up-strawberry");
-    const downStrawberry = document.querySelector("#down-strawberry")
-    let valueStrawberry = document.querySelector("#value-strawberry")
 
-    const upBanana = document.querySelector("#up-banana");
-    const downBanana = document.querySelector("#down-banana")
-    let valueBanana = document.querySelector("#value-banana")
+    const getSelector = (fruit) => {
+        const selectors = {
+            up: document.querySelector(`#up-${fruit}`),
+            down: document.querySelector(`#down-${fruit}`),
+            value: document.querySelector(`#value-${fruit}`),
+        }
+        selectors.up.addEventListener("click", () => {
+            if (selectors.value.innerText < 99) {
+                selectors.value.innerText++
+            }
+        })
+        selectors.down.addEventListener("click", () => {
+            if (selectors.value.innerText > 1) {
+                selectors.value.innerText--
+            }
+        })
+        return selectors
+    }
+    const strawberry = getSelector("strawberry")
+    const banana = getSelector("banana")
+    const watermelon = getSelector("watermelon")
+    const lime = getSelector("lime")
+    const apple = getSelector("apple")
+    const peach = getSelector("peach")
+    const plums = getSelector("plums")
+    const orange = getSelector("orange")
+    const kiwi = getSelector("kiwi")
 
-    const upWatermelon = document.querySelector("#up-watermelon");
-    const downWatermelon = document.querySelector("#down-watermelon")
-    let valueWatermelon = document.querySelector("#value-watermelon")
+    strawberry.value.textContent = "1"
+    banana.value.textContent = "1"
+    watermelon.value.textContent = "1"
+    lime.value.textContent = "1"
+    apple.value.textContent = "1"
+    peach.value.textContent = "1"
+    plums.value.textContent = "1"
+    orange.value.textContent = "1"
+    kiwi.value.textContent = "1"
 
-    const upLime = document.querySelector("#up-lime");
-    const downLime = document.querySelector("#down-lime")
-    let valueLime = document.querySelector("#value-lime")
-
-    const upApple = document.querySelector("#up-apple");
-    const downApple = document.querySelector("#down-apple")
-    let valueApple = document.querySelector("#value-apple")
-
-    const upPeach = document.querySelector("#up-peach");
-    const downPeach = document.querySelector("#down-peach")
-    let valuePeach = document.querySelector("#value-peach")
-
-    const upPlums = document.querySelector("#up-plums");
-    const downPlums = document.querySelector("#down-plums")
-    let valuePlums = document.querySelector("#value-plums")
-
-    const upOrange = document.querySelector("#up-orange");
-    const downOrange = document.querySelector("#down-orange")
-    let valueOrange = document.querySelector("#value-orange")
-
-    const upKiwi = document.querySelector("#up-kiwi");
-    const downKiwi = document.querySelector("#down-kiwi")
-    let valueKiwi = document.querySelector("#value-kiwi")
-
-
-    upStrawberry.addEventListener("click", () => {
-        if (valueStrawberry.innerText < 99) {
-            valueStrawberry.innerText++
-        }
-    })
-    downStrawberry.addEventListener("click", () => {
-        if (valueStrawberry.innerText > 1) {
-            valueStrawberry.innerText--
-        }
-    })
-
-    upBanana.addEventListener("click", () => {
-        if (valueBanana.innerText < 99) {
-            valueBanana.innerText++
-        }
-    })
-    downBanana.addEventListener("click", () => {
-        if (valueBanana.innerText > 1) {
-            valueBanana.innerText--
-        }
-    })
-
-    upWatermelon.addEventListener("click", () => {
-        if (valueWatermelon.innerText < 99) {
-            valueWatermelon.innerText++
-        }
-    })
-    downWatermelon.addEventListener("click", () => {
-        if (valueWatermelon.innerText > 1) {
-            valueWatermelon.innerText--
-        }
-    })
-
-    upLime.addEventListener("click", () => {
-        if (valueLime.innerText < 99) {
-            valueLime.innerText++
-        }
-    })
-    downLime.addEventListener("click", () => {
-        if (valueLime.innerText > 1) {
-            valueLime.innerText--
-        }
-    })
-
-    upApple.addEventListener("click", () => {
-        if (valueApple.innerText < 99) {
-            valueApple.innerText++
-        }
-    })
-    downApple.addEventListener("click", () => {
-        if (valueApple.innerText > 1) {
-            valueApple.innerText--
-        }
-    })
-
-    upPeach.addEventListener("click", () => {
-        if (valuePeach.innerText < 99) {
-            valuePeach.innerText++
-        }
-    })
-    downPeach.addEventListener("click", () => {
-        if (valuePeach.innerText > 1) {
-            valuePeach.innerText--
-        }
-    })
-
-    upPlums.addEventListener("click", () => {
-        if (valuePlums.innerText < 99) {
-            valuePlums.innerText++
-        }
-    })
-    downPlums.addEventListener("click", () => {
-        if (valuePlums.innerText > 1) {
-            valuePlums.innerText--
-        }
-    })
-
-    upOrange.addEventListener("click", () => {
-        if (valueOrange.innerText < 99) {
-            valueOrange.innerText++
-        }
-    })
-    downOrange.addEventListener("click", () => {
-        if (valueOrange.innerText > 1) {
-            valueOrange.innerText--
-        }
-    })
-
-    upKiwi.addEventListener("click", () => {
-        if (valueKiwi.innerText < 99) {
-            valueKiwi.innerText++
-        }
-    })
-    downKiwi.addEventListener("click", () => {
-        if (valueKiwi.innerText > 1) {
-            valueKiwi.innerText--
-        }
-    })
 
     // popap
 
@@ -340,39 +244,39 @@ document.addEventListener("DOMContentLoaded", () => {
             let item;
             let price;
             if (event.target.parentElement.id === "add-strawberry") {
-                value = parseInt(valueStrawberry.textContent);
+                value = parseInt(strawberry.value.textContent);
                 item = "Strawberry";
                 price = 100;
             } else if (event.target.parentElement.id === "add-banana") {
-                value = parseInt(valueBanana.textContent);
+                value = parseInt(banana.value.textContent);
                 item = "Banana";
                 price = 80;
             } else if (event.target.parentElement.id === "add-watermelon") {
-                value = parseInt(valueWatermelon.textContent);
+                value = parseInt(watermelon.value.textContent);
                 item = "Watermelon";
                 price = 40;
             } else if (event.target.parentElement.id === "add-lime") {
-                value = parseInt(valueLime.textContent);
+                value = parseInt(lime.value.textContent);
                 item = "Lime";
                 price = 60;
             } else if (event.target.parentElement.id === "add-apple") {
-                value = parseInt(valueApple.textContent);
+                value = parseInt(apple.value.textContent);
                 item = "Apple";
                 price = 50;
             } else if (event.target.parentElement.id === "add-peach") {
-                value = parseInt(valuePeach.textContent);
+                value = parseInt(peach.value.textContent);
                 item = "Peach";
                 price = 80;
             } else if (event.target.parentElement.id === "add-plums") {
-                value = parseInt(valuePlums.textContent)
+                value = parseInt(plums.value.textContent)
                 item = "Plums"
                 price = 40
             } else if (event.target.parentElement.id === "add-orange") {
-                value = parseInt(valueOrange.textContent)
+                value = parseInt(orange.value.textContent)
                 item = "Orange"
                 price = 60
             } else if (event.target.parentElement.id === "add-kiwi") {
-                value = parseInt(valueKiwi.textContent)
+                value = parseInt(kiwi.value.textContent)
                 item = "Kiwi"
                 price = 90
             }
