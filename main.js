@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Update information about the item in the basket
 
             if (!basket[item]) {
-                basket[item] = { value: value, price: price }
+                basket[item] = { value, price }
             } else {
                 basket[item].value += value
             }
@@ -300,9 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //Load information from localstorage
 
     window.addEventListener("load", () => {
-        const savedBasket = localStorage.getItem("basket");
+        const savedBasket = JSON.parse(localStorage.getItem("basket")) || null;
         if (savedBasket) {
-            basket = JSON.parse(savedBasket);
+            basket = savedBasket;
             updateBasketTable();
         }
     });
